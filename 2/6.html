@@ -36,16 +36,17 @@ console.log(declinationOfNumber(5, "стул", "стула", "стульев"));
    * с числом переданным первым аргументом.
    */
   function declinationOfNumber(count, one, two, five) {
-    const num = Math.abs(count);
+    const num100 = Math.abs(count) % 100;
+    const num10 = Math.abs(count) % 10;
 
-    if (num % 100 >= 11 && num % 100 <= 19) {
-        return five;
-    } else if (num % 10 === 1) {
-        return one;
-    } else if (num % 10 >= 2 && num % 10 <= 4) {
-        return two;
+    if (num100 >= 11 && num100 <= 19) {
+      return five;
+    } else if (num10 === 1) {
+      return one;
+    } else if (num10 >= 2 && num10 <= 4) {
+      return two;
     } else {
-        return five;
+      return five;
     }
   }
 

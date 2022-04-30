@@ -45,32 +45,32 @@ Infinity делать не нужно, однако, в случае если б
    */
   function mathOperation(arg1, arg2, operation) {
     if (operation === "+") {
-        return getSum(arg1, arg2);
+      return getSum(arg1, arg2);
     } else if (operation === "-") {
-        return getSubtract(arg1, arg2);
+      return getSubtract(arg1, arg2);
     } else if (operation === "*") {
-        return getMulti(arg1, arg2);
+      return getMulti(arg1, arg2);
     } else if (operation === "/") {
-        return getDiv(arg1, arg2);
+      return getDiv(arg1, arg2);
     } else {
-        return NaN;
+      return NaN;
     }
   }
 
   //или
   function mathOperation2(arg1, arg2, operation) {
-      switch (operation) {
-          case ("+"):
-              return getSum(arg1, arg2);
-          case ("-"):
-              return  getSubtract(arg1, arg2);
-          case ("*"):
-              return getMulti(arg1, arg2);
-          case ("/"):
-              return getDiv(arg1, arg2);
-          default:
-              return NaN;
-      }
+    switch (operation) {
+      case "+":
+        return getSum(arg1, arg2);
+      case "-":
+        return  getSubtract(arg1, arg2);
+      case "*":
+        return getMulti(arg1, arg2);
+      case "/":
+        return getDiv(arg1, arg2);
+      default:
+        return NaN;
+    }
   }
 
   console.log(mathOperation(5, 3, "+"));//8
@@ -86,9 +86,8 @@ Infinity делать не нужно, однако, в случае если б
    * @returns {number} Вернет число, получившееся в результате сложения двух
    * чисел.
    */
-
   function getSum(a, b) {
-      return a + b;
+    return a + b;
   }
 
   /**
@@ -100,10 +99,10 @@ Infinity делать не нужно, однако, в случае если б
    * чисел.
    */
   function getSubtract(a, b) {
-      if (a > b) {
-          return  a - b;
-      }
-      return b - a;
+    if (a > b) {
+      return  a - b;
+    }
+    return b - a;
   }
 
   /**
@@ -114,7 +113,7 @@ Infinity делать не нужно, однако, в случае если б
    * чисел.
    */
   function getMulti(a, b) {
-      return a * b;
+    return a * b;
   }
 
   /**
@@ -125,7 +124,7 @@ Infinity делать не нужно, однако, в случае если б
    * чисел.
    */
   function getDiv(a, b) {
-      return a / b;
+    return a / b;
   }
 </script>
 </body>
