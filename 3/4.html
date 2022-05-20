@@ -61,6 +61,12 @@
   });
   console.log(productsPhoto2);
 
+  //так лучше
+  const productsPhoto2 = products.filter(product => {
+    return 'photos' in product && product.photos.length > 0;
+  });
+  console.log(productsPhoto2);
+
   //2
   products.sort(function(productPriceMin, productPriceMax) {
     return productPriceMin.price - productPriceMax.price;
