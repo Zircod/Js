@@ -42,14 +42,10 @@
       return {};
     }
 
-    const units = number % 10;
-    const tens = Math.trunc((number % 100) / 10);
-    const hundreds = Math.trunc((number % 1000) / 100);
-
     return {
-      units,
-      tens,
-      hundreds,
+      units: number % 10,
+      tens: Math.trunc((number % 100) / 10),
+      hundreds: Math.trunc((number % 1000) / 100),
     };
   }
 
