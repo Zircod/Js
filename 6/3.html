@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+  <style>
+    i {
+      font-size: 50px;
+    }
+    .golden {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Выполнить все задачи в теге script. Комментарии, в которых написаны задачи, не
+стирать, код с решением задачи пишем под комментарием.
+-->
+
+<div class="stars_container">
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+</div>
+
+<script>
+  "use strict";
+
+  /*
+  1. При наведении на любую из звезд, данной звезде должен ставиться класс
+  golden, также такой класс должен ставиться всем звездам до нее слева.
+  */
+  const divEl = document.querySelector('.stars_container');
+
+  const nodesDivEl = divEl.childNodes;
+  console.log(nodesDivEl);
+
+  const chidesDivEl = divEl.children;
+  console.log(chidesDivEl);
+
+  //Не удачный вариант вышел, при фокусировке на пробелы между звездами,
+  //все звезды красятся в желтый цвет не совсем поняла почему именно все
+  // divEl.addEventListener('mouseover',event => {
+  //   let el = event.target;
+  //
+  //   while (el) {
+  //     el.classList.add('golden');
+  //     el = el.previousElementSibling;
+  //   }
+  // });
+
+  //поэтому повесила событие на детей тега div (HTML collection, чтобы в
+  // объектоподобном массиве не было узлов в виде text(пробел/перенос строк))
+  for (let i = 0; i < chidesDivEl.length; i++) {
+    chidesDivEl[i].addEventListener('mouseover',event => {
+      let el = event.target;
+
+      while (el) {
+        el.classList.add('golden');
+        el = el.previousElementSibling;
+      }
+    });
+  }
+
+  /*
+  2. Когда мы уводим курсор мыши от звезды, все поставленные классы из первого
+  задания должны быть удалены.
+   */
+  // divEl.addEventListener('mouseout',event => {
+  //   let el = event.target;
+  //
+  //   while (el) {
+  //     el.classList.remove('golden');
+  //     el = el.previousElementSibling;
+  //   }
+  // });
+
+  for (let i = 0; i < chidesDivEl.length; i++) {
+    chidesDivEl[i].addEventListener('mouseout',event => {
+      let el = event.target;
+
+      while (el) {
+        el.classList.remove('golden');
+        el = el.previousElementSibling;
+      }
+    });
+  }
+
+  /*
+  3. Когда мы переводим мышь от одной звезды к другой, у нас могут мигать
+  звезды (временно могут становиться черными). Почему так? Напишите словами.
+  Можем ли мы это исправить? Если да, то предложите решение.
+  */
+
+  /* Может неправильно поняла про мигание, но когда фокус на пробеле/переносе
+  строк, звезды соответственно не красятся.
+  Вот здесь наверно надо удалить узлы text у nodeList которые содержат переносы
+  строк */
+
+  // for (let i=0; i < nodesDivEl.length; i++) {
+  //   if (nodesDivEl[i].textContent !== '') {
+  //     nodesDivEl[i].remove();
+  //     console.log(nodesDivEl);
+  //   }
+  // }
+
+//или
+//   nodesDivEl.forEach(el => {
+//     if (el.nodeName === '#text') {
+//       el.remove();
+//       console.log(nodesDivEl);
+//     }
+//   });
+
+</script>
+</body>
+</html>

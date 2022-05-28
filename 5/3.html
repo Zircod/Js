@@ -78,7 +78,7 @@
   Необходимо использовать делегирование.
   */
   document.addEventListener('click', event => {
-    if (event.target.className === 'super_element') {
+    if (event.target.classList.contains('super_element')) {
       return console.log(`Класс "super_element" присутствует в элементе "${event.target.tagName.toLowerCase()}".`);
     }
 
@@ -101,9 +101,10 @@
   Необходимо использовать делегирование.
    */
   document.querySelector('ul').addEventListener('click', event => {
-    if (event.target.tagName === "BUTTON") {
-      return console.log(event.target.textContent);
+    if (event.target.tagName !== "BUTTON") {
+      return;
     }
+    console.log(event.target.textContent);
   });
 
   /*
@@ -115,7 +116,7 @@
   // При погружении объект события проходит от корневого элемента window к
   // целевому, потом всплытие в обратном порядке. Т.е. проходя по DOM-дереву
   // сначала обрабатывается событие по тегу ul (при клике событие погружается и
-  // всплывает). Потом обрабатывается событие дочернего элемента тега ul button.
+  // всплывает).
 
   /*
   7. С помощью JS необходимо изменить цвет заднего фона каждого второго тега li.
