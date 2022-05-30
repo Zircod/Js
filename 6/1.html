@@ -44,7 +44,7 @@
    */
   document
     .querySelectorAll('.productName')
-    .forEach((el) => {el.style.fontSize = '24px'});
+    .forEach((el) => el.style.fontSize = '24px');
 
   //или
   // const productSize = document.querySelectorAll('.productName');
@@ -57,7 +57,7 @@
    */
   document
     .querySelectorAll('.product')
-    .forEach((el) => {el.style.marginRight = '50px'});
+    .forEach((el) => el.style.marginRight = '50px');
 
   /*
   3. При клике на кнопку "В корзину" название кнопки должно поменяться на
@@ -73,13 +73,24 @@
     btn[i].addEventListener('click', getAdd);
   }
 
-  //или
+  //наилучший вариант делегируем событие вешаем на родителя в данном случа body
+  // и обязательно проверяем что событие срабатывает на кнопку
+  document.body.addEventListener('click', event => {
+    const button = event.target;
+    if (button.tagName !== "BUTTON") {
+      return;
+    }
+    button.textContent = 'Добавлено';
+    button.disabled = true;
+  });
+
+  // или
   // document
   //   .querySelectorAll('button')
   //   .forEach((el) => {
   //     el.addEventListener('click', event => {
-  //     event.target.textContent = 'Добавлено';
-  //     event.target.disabled = true;
+  //       event.target.textContent = 'Добавлено';
+  //       event.target.disabled = true;
   //   });
   // });
 
@@ -145,7 +156,7 @@
   productClone.querySelector('.productName').textContent = "Товар 4";
   productClone
     .querySelector('img')
-    .setAttribute('src', 'https://picsum.photos/id/1080/200/300');
+    .src = 'https://picsum.photos/id/1080/200/300';
   productClone.querySelector('button').addEventListener('click', getAdd);
 
   /*
@@ -153,9 +164,7 @@
   удален из html.
    */
 
-  setTimeout(() => {
-    document.querySelector('.product:first-of-type').remove();
-    }, 2000);
+  setTimeout(() => document.querySelector('.product:first-of-type').remove(), 2000);
 
 </script>
 </body>

@@ -46,52 +46,61 @@
   console.log(chidesDivEl);
 
   //Не удачный вариант вышел, при фокусировке на пробелы между звездами,
-  //все звезды красятся в желтый цвет не совсем поняла почему именно все
-  // divEl.addEventListener('mouseover',event => {
-  //   let el = event.target;
-  //
-  //   while (el) {
-  //     el.classList.add('golden');
-  //     el = el.previousElementSibling;
-  //   }
-  // });
+  //все звезды красятся в желтый цвет не совсем поняла почему именно все,
+  //п.ч. клик попадал на Div
+  //!!!!!не забывать ставить условие при делегировании события,
+  //что event.target именно кнопка в данном случае, если нет ничего не делать
+  divEl.addEventListener('mouseover',event => {
+    if (!event.target.classList.contains('fas')) {
+      return;
+    }
+    let el = event.target;
 
-  //поэтому повесила событие на детей тега div (HTML collection, чтобы в
+    while (el) {
+      el.classList.add('golden');
+      el = el.previousElementSibling;
+    }
+  });
+
+  //повесила событие на детей тега div (HTML collection, чтобы в
   // объектоподобном массиве не было узлов в виде text(пробел/перенос строк))
-  for (let i = 0; i < chidesDivEl.length; i++) {
-    chidesDivEl[i].addEventListener('mouseover',event => {
-      let el = event.target;
-
-      while (el) {
-        el.classList.add('golden');
-        el = el.previousElementSibling;
-      }
-    });
-  }
+  // for (let i = 0; i < chidesDivEl.length; i++) {
+  //   chidesDivEl[i].addEventListener('mouseover',event => {
+  //     let el = event.target;
+  //
+  //     while (el) {
+  //       el.classList.add('golden');
+  //       el = el.previousElementSibling;
+  //     }
+  //   });
+  // }
 
   /*
   2. Когда мы уводим курсор мыши от звезды, все поставленные классы из первого
   задания должны быть удалены.
    */
-  // divEl.addEventListener('mouseout',event => {
-  //   let el = event.target;
-  //
-  //   while (el) {
-  //     el.classList.remove('golden');
-  //     el = el.previousElementSibling;
-  //   }
-  // });
-
-  for (let i = 0; i < chidesDivEl.length; i++) {
-    chidesDivEl[i].addEventListener('mouseout',event => {
-      let el = event.target;
-
-      while (el) {
-        el.classList.remove('golden');
-        el = el.previousElementSibling;
-      }
-    });
+  divEl.addEventListener('mouseout',event => {
+  if (!event.target.classList.contains('fas')) {
+    return;
   }
+    let el = event.target;
+
+    while (el) {
+      el.classList.remove('golden');
+      el = el.previousElementSibling;
+    }
+  });
+
+  // for (let i = 0; i < chidesDivEl.length; i++) {
+  //   chidesDivEl[i].addEventListener('mouseout',event => {
+  //     let el = event.target;
+  //
+  //     while (el) {
+  //       el.classList.remove('golden');
+  //       el = el.previousElementSibling;
+  //     }
+  //   });
+  // }
 
   /*
   3. Когда мы переводим мышь от одной звезды к другой, у нас могут мигать
@@ -112,12 +121,12 @@
   // }
 
 //или
-//   nodesDivEl.forEach(el => {
-//     if (el.nodeName === '#text') {
-//       el.remove();
-//       console.log(nodesDivEl);
-//     }
-//   });
+  nodesDivEl.forEach(el => {
+    if (el.nodeName === '#text') {
+      el.remove();
+      console.log(nodesDivEl);
+    }
+  });
 
 </script>
 </body>
