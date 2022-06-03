@@ -1,0 +1,75 @@
+//Product page
+.bootstrap-carousel {
+
+  .carousel-inner {
+    height: 777px;
+    background: #F7F7F7;
+    border: 1px solid #EAEAEA;
+
+    @include tablet {
+      height: 624px;
+    }
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: $darkgrey-color;
+    width: 47px;
+    height: 47px;
+  }
+
+  .bootstrap-carousel__img {
+    width: 597px;
+    padding: 11px 0 42px 0;
+
+    @include tablet{
+      width: 466px;
+      padding: 29px 0;
+    }
+
+    @include mobile {
+      width: 374px;
+      padding: 85px 0;
+    }
+  }
+
+  .bootstrap-carousel__arrow{
+    color: $black-bkg;
+    font-size: 21px;
+    width: 47px;
+    height: 47px;
+    background-color: $grey-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-control-prev:hover .bootstrap-carousel__arrow,
+  .carousel-control-prev:focus .bootstrap-carousel__arrow,
+  .carousel-control-next:hover .bootstrap-carousel__arrow,
+  .carousel-control-next:focus .bootstrap-carousel__arrow{
+    color: $pink-color;
+  }
+
+  .carousel-control-prev:active .bootstrap-carousel__arrow,
+  .carousel-control-next:active .bootstrap-carousel__arrow{
+    opacity: 0.5;
+  }
+
+  .carousel-control-prev {
+    @include tablet {
+      justify-content: flex-start;
+    }
+  }
+
+  .carousel-control-next {
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+
+  svg {
+    vertical-align: baseline;
+  }
+
+}

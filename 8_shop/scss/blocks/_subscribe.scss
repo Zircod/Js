@@ -1,0 +1,141 @@
+/*FOOTER subscribe*/
+.subscribe {
+  background-color: $header-icon;
+  background-image: url("../img/bkg-footer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 448px;
+
+  @include tablet {
+    height: 614px;
+    background-position-x: -395px;
+  }
+
+  @include mobile {
+    height: 550px;
+  }
+
+  .subscribe__wrp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 97px;
+
+    @include tablet {
+      flex-direction: column;
+      padding-top: 64px;
+    }
+  }
+
+  .subscribe__quote {
+    max-width: 360px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subscribe__quote-icon {
+    margin: 0 0 30px 0;
+  }
+
+  .subscribe__quote-text {
+    @include font (20px, 24px);
+    text-align: center;
+    color: $black-bkg;
+
+    @include mobile {
+      @include font (18px, 22px);
+    }
+  }
+
+  .subscribe__quote-ital {
+    font-style: italic;
+
+    @include mobile {
+      @include font (18px, 22px);
+    }
+  }
+
+  .subscribe__form {
+
+    @include tablet {
+      margin-top: 48px;
+    }
+
+    @include mobile {
+      margin-top: 59px;
+    }
+  }
+
+  .subscribe__form-join {
+    display: flex;
+  }
+
+  .subscribe__form-title {
+    @include font (18px, 30px);
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 32px 0;
+
+    @include tablet {
+      margin: 0 0 27px 0;
+    }
+
+    @include mobile {
+      margin: 0 0 22px 0;
+      @include font (14px, 22px);
+    }
+  }
+
+  .subscribe__form-title-lower {
+    @include font (24px, 40px, normal, 700);
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  .subscribe__form-input {
+    @include font (14px, 17px);
+    max-width: 256px;
+    width: 100%;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    background: $header-icon;
+    padding-left: 22px;
+    text-align: left;
+    color: $black-bkg;
+    opacity: 0.7;
+    box-sizing: border-box;
+    transition: outline 0.4s linear;
+  }
+
+  .subscribe__form-input:hover,
+  .subscribe__form-input:focus {
+    outline: 1px solid $pink-color;
+  }
+
+  .subscribe__form-btn {
+    @include font (14px, 17px);
+    height: 49px;
+    width: 100px;
+    border-radius: 0 25px 25px 0;
+    border: none;
+    background: $pink-color;
+    color: $white-color;
+    transition: background 0.4s linear;
+  }
+
+  .subscribe__form-btn:hover,
+  .subscribe__form-btn:focus {
+    background: $btn-pink-hover;
+    cursor: pointer;
+  }
+
+  .subscribe__form-btn:active {
+    opacity: 0.7;
+  }
+}
+
+

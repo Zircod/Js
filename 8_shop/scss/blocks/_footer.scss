@@ -1,0 +1,70 @@
+/*FOOTER*/
+.footer {
+  background-color: $black-bkg;
+
+  .footer__wrp {
+    height: 79px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include mobile {
+      height: 143px;
+      flex-direction: column-reverse;
+    }
+  }
+
+  .footer__text {
+    font-size: 16px;
+    line-height: 19px;
+    color: $advantages-color;
+
+    @include mobile {
+      padding-bottom: 9px;
+    }
+  }
+
+  .footer__list {
+    display: flex;
+
+    @include mobile {
+      padding-top: 43px;
+    }
+  }
+
+  .footer__link {
+    width: 32px;
+    height: 32px;
+    background: $white-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 7px;
+    transition: background 0.4s linear;
+  }
+
+  .footer__icon {
+    fill: $black-bkg;
+    transition: background 0.4s linear;
+  }
+
+  .footer__link:hover,
+  .footer__link:focus {
+    background: $pink-color;
+  }
+
+  .footer__icon:hover,
+  .footer__icon:focus,
+  .footer__link:hover .footer__icon,
+  .footer__link:focus .footer__icon{
+    fill: $white-color;
+    cursor: pointer;
+  }
+
+  .footer__link:active,
+  .footer__link:active .footer__icon {
+    opacity: 0.7;
+  }
+}
+
+

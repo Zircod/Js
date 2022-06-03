@@ -1,0 +1,75 @@
+/*SALES*/
+.sales {
+
+  .sales__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .sales__item {
+    height: 260px;
+    width: 360px;
+    background-color: $sales-color;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet {
+      width: 32%;
+      height: 167px;
+    }
+
+    @include mobile {
+      width: 100%;
+      height: 248px;
+      margin-bottom: 32px;
+    }
+  }
+
+  .sales__item--woman {
+    background: url("../img/woman-sales.jpg");
+    background-size: cover;
+  }
+
+  .sales__item--man {
+    background: url("../img/man-sales.jpg");
+    background-size: cover;
+  }
+
+  .sales__item--kids {
+    background: url("../img/kids-sales.jpg");
+    background-size: cover;
+  }
+
+  .sales__item--shoes {
+    width: 100%;
+    height: 180px;
+    background: url("../img/accessories-sales.jpg");
+    margin: 30px 0 0 0;
+
+    @include tablet {
+      margin: 20px 0 0 0;
+      height: 117px;
+    }
+
+    @include mobile {
+      width: 100%;
+      height: 111px;
+      margin: 0;
+    }
+  }
+
+  .sales__item-text {
+    @include font (16px, 19px);
+    color: $white-color;
+    text-transform: uppercase;
+  }
+
+  .sales__item-title {
+    @include font (24px, 29px, normal, 700);
+    color: $pink-color;
+    text-transform: uppercase;
+  }
+}

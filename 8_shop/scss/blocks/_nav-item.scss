@@ -1,0 +1,30 @@
+//микс на отдельной scss
+.nav-item {
+
+  .nav-item__title {
+    color: $pink-color;
+    text-transform: uppercase;
+    padding: 20px 0 12px 33px;
+  }
+
+  .nav-item__item {
+    margin: 0 0 11px 54px;
+  }
+
+  .nav-item__link {
+    color: $menu-grey-color;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: color 0.3s linear;
+  }
+
+  .nav-item__link:hover,
+  .nav-item__link:focus {
+    color: $pink-color;
+    cursor: pointer;
+  }
+
+  .nav-item__link:active {
+    opacity: 0.7;
+  }
+}
