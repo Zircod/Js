@@ -1,0 +1,344 @@
+/*страница CARDS*/
+.shopping {
+
+  .shopping__wrp {
+    display: flex;
+    justify-content: space-between;
+    margin: 96px 0 128px 0;
+
+    @include tablet {
+      flex-direction: column;
+      justify-content: center;
+      margin: 59px 0 128px 0;
+    }
+
+    @include mobile {
+      margin: 39px 0 96px 0;
+    }
+  }
+
+  .shopping__cart {
+    width: 100%;
+    margin-right: 128px;
+  }
+
+  .shopping__item {
+    display: flex;
+    margin-bottom: 40px;
+    box-shadow: 17px 19px 24px 0 #00000021;
+
+    @include tablet {
+      margin-bottom: 32px;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .shopping__item-img {
+    height: 306px;
+    width: 262px;
+
+    @include mobile {
+      height: 188px;
+      width: 144px;
+    }
+  }
+
+  .shopping__item-description {
+    padding: 22px 0 0 31px;
+    width: 100%;
+    position: relative;
+
+    @include tablet {
+      flex-grow: 1;
+    }
+    @include mobile {
+      padding: 13px 0 0 17px;
+    }
+  }
+
+  .shopping__item-close {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    position: absolute;
+    top: 28px;
+    right: 22px;
+
+    @include mobile {
+      top: 17px;
+      right: 12px;
+    }
+  }
+
+  //javascript для функции display-none
+  .shopping__item--none {
+    display: none;
+  }
+
+  .shopping__item-icon {
+    fill: $menu-grey-color;
+    width: 18px;
+    height: 18px;
+    transition: 0.4s;
+
+    @include mobile {
+      width: 10px;
+      height: 11px;
+    }
+  }
+
+  .shopping__item-close:hover .shopping__item-icon,
+  .shopping__item-close:focus .shopping__item-icon {
+    fill: $pink-color;
+    cursor: pointer;
+  }
+
+  .shopping__item-close:active .shopping__item-icon {
+    opacity: 0.7;
+  }
+
+  .shopping__item-title {
+    @include font (24px, 29px);
+    text-align: left;
+    text-transform: uppercase;
+    margin-bottom: 42px;
+
+    @include mobile {
+      @include font (16px, 19px);
+      margin-bottom: 25px;
+      width: 70%;
+    }
+  }
+
+  .shopping__item-price,
+  .shopping__item-color,
+  .shopping__item-size,
+  .shopping__item-quantity {
+    @include font (22px, 26px);
+    color: $darkgrey-color;
+    text-align: left;
+    margin-bottom: 6px;
+
+    @include mobile {
+      @include font (14px, 17px);
+      margin-bottom: 3px;
+    }
+  }
+
+  .shopping__item-price-red {
+    color: $pink-color;
+  }
+
+  .shopping__item-input {
+    @include font (18px, 22px);
+    width: 43px;
+    height: 24px;
+    border: 1px solid $shopping-input-grey;
+    box-sizing: border-box;
+    margin-left: 24px;
+    color: $darkgrey-color;
+    text-align: center;
+    transition: 0.4s;
+
+    @include mobile {
+      @include font (10px, 12px);
+      width: 24px;
+      height: 15px;
+      margin-left: 15px;
+    }
+  }
+
+  .shopping__btn {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 33px;
+
+    @include tablet {
+      justify-content: center;
+      gap: 49px;
+    }
+
+    @include mobile {
+      gap: 9px;
+      padding-top: 0;
+    }
+  }
+
+  .shopping__btn-wrp {
+    @include font (14px, 17px, normal, 300);
+    border: 1px solid $shopping-input-grey;
+    color: $black-bkg;
+    background: none;
+    padding: 16px 40px;
+    text-transform: uppercase;
+    transition: 0.4s;
+
+    @include mobile {
+      @include font (12px, 14px, normal, 400);
+      padding: 9px 18px;
+      text-transform: lowercase;
+      flex-grow: 1;
+    }
+  }
+
+  .shopping__btn-wrp::first-letter {
+    @include mobile {
+      text-transform: uppercase;
+    }
+  }
+
+  .shopping__info {
+
+    @include tablet {
+      display: flex;
+      padding-top: 64px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      padding-top: 48px;
+    }
+  }
+
+  .shopping__address {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .shopping__address-title {
+    @include font (16px, 19px, normal, 300);
+    text-align: left;
+    color: $black-bkg;
+    text-transform: uppercase;
+  }
+
+  .shopping__address-input {
+    @include font (13px, 16px, normal, 300);
+    border: 1px solid $shopping-input-grey;
+    padding: 13px 0 16px 17px;
+    margin-top: 21px;
+    box-sizing: border-box;
+    color: $black-bkg;
+    text-align: left;
+    transition: outline 0.4s linear;
+  }
+
+  .shopping__address-input::placeholder {
+    color: $shopping-text-grey;
+  }
+
+  .shopping__address-input:hover,
+  .shopping__address-input:focus,
+  .shopping__item-input:hover,
+  .shopping__item-input:focus {
+    outline: 2px solid $pink-color;
+  }
+
+  .shopping__address-btn {
+    @include font (11px, 13px, normal, 300);
+    border: 1px solid $shopping-input-grey;
+    background: none;
+    padding: 11px 14px;
+    text-transform: uppercase;
+    color: $darkgrey-color;
+    margin: 24px 0 57px 0;
+    transition: 0.4s;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+
+    @include mobile {
+      margin-bottom: 48px;
+    }
+  }
+
+  .shopping__btn-wrp:hover,
+  .shopping__btn-wrp:focus,
+  .shopping__address-btn:hover,
+  .shopping__address-btn:focus {
+    color: $white-color;
+    background: $pink-color;
+    cursor: pointer;
+  }
+
+  .shopping__btn-wrp:active,
+  .shopping__address-btn:active {
+    opacity: 0.7;
+  }
+
+  .shopping__total {
+    width: 360px;
+    height: 214px;
+    background: #F5F3F3;
+    padding: 39px 43px 42px 44px;
+    box-sizing: border-box;
+
+
+    @include tablet {
+      width:50%;
+      margin-left: 15px;
+      align-self: center;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .shopping__total-sub {
+    @include font (11px, 13px);
+    text-align: right;
+    text-transform: uppercase;
+    color: $sales-color;
+    margin-bottom: 12px;
+  }
+
+  .shopping__total-grand {
+    @include font (16px, 19px, normal, 300);
+    text-align: right;
+    text-transform: uppercase;
+    color: $black-bkg;
+    margin-bottom: 21px;
+  }
+
+  .shopping__total-end {
+    color: $pink-color;
+    font-weight: 700;
+  }
+
+  .shopping__total-btn {
+    @include font (16px, 19px, normal, 300);
+    padding: 15px 41px;
+    background: $pink-color;
+    border: none;
+    text-transform: uppercase;
+    color: $white-color;
+    margin-top: 17px;
+    box-sizing: border-box;
+    transition: 0.4s;
+  }
+
+  .shopping__total-btn:hover,
+  .shopping__total-btn:focus {
+    background: $btn-pink-hover;
+    cursor: pointer;
+  }
+
+  .shopping__total-btn:active {
+    opacity: 0.7;
+  }
+}
+

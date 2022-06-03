@@ -1,0 +1,47 @@
+/*ADVANTAGES*/
+.advantages {
+  background: $black-bkg;
+
+  &__list {
+    height: 341px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet {
+      min-height: 610px;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+
+    @include tablet  {
+      margin-top: 48px;
+    }
+  }
+
+  &__item-img {
+    align-self: center;
+  }
+
+  &__item-title {
+    @include font(20px,24px);
+    color: $advantages-color;
+    text-align: center;
+    margin: 28px 0 16px 0;
+  }
+
+  &__item-text {
+    font-weight: 300;
+    color: $advantages-color;
+    text-align: center;
+  }
+}
+
+
+

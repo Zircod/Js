@@ -1,0 +1,94 @@
+/*BRAND*/
+.brand {
+  display: flex;
+  margin: 0 0 65px 0;
+
+  @include tablet {
+    margin: 0 0 20px 0;
+  }
+
+  @include mobile {
+    margin: 0 0 64px 0;
+  }
+
+  &__img {
+    width: 50%;
+    height: 765px;
+    object-fit: contain;
+
+    @include tablet {
+      height: auto;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  &__title-wrap {
+    flex-grow: 1;
+    background-color: $pink-bkg;
+    padding: 0 0 0 60px;
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+      padding: 0 0 0 39px;
+    }
+
+    @include mobile {
+      min-height: 363px;
+      justify-content: center;
+      padding: 0;
+    }
+  }
+
+  &__decor {
+    width: 12px;
+    height: 92px;
+    background: $pink-color;
+    border: none;
+    margin: 0 16px 0 0;
+
+    @include mobile {
+      height: 61px;
+    }
+  }
+
+  &__title {
+    @include font (48px, 58px, normal, 900);
+    text-transform: uppercase;
+
+    @include tablet {
+      @include font (44px, 53px, normal, 900);
+    }
+
+    @include mobile {
+      @include font (38px, 46px, normal, 900);
+    }
+  }
+
+  &__title-lower {
+    @include font (32px, 38px, normal, 700);
+    text-transform: uppercase;
+    display: block;
+
+    @include tablet {
+      @include font (24px, 29px, normal, 700);
+    }
+
+    @include mobile {
+      @include font (20px, 24px, normal, 700);
+    }
+  }
+
+  &__title-pink {
+    color: $pink-color;
+  }
+
+  &__title-animation {
+    -webkit-animation: focus-in-expand-fwd 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: focus-in-expand-fwd 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+}
+

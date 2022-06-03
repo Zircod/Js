@@ -1,0 +1,197 @@
+/*страница REGISTRATION*/
+.registration {
+
+  .registration__wrp {
+    display: flex;
+    justify-content: space-between;
+    margin: 64px 0 96px 0;
+
+    @include tablet {
+      margin: 40px 0 96px 0;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .registration__form {
+    width: 360px;
+
+    @include tablet {
+      width: 50%;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  .registration__login {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .registration__login-title {
+    @include font (16px, 19px, normal, 300);
+    text-align: left;
+  }
+
+  .registration__login-input {
+    @include font (13px, 16px, normal, 300);
+    padding: 13px 0 16px 17px;
+    margin-top: 20px;
+    border: 1px solid $shopping-input-grey;
+    color: $black-bkg;
+    box-sizing: border-box;
+    transition: outline 0.2s linear;
+  }
+
+  .registration__login-input::placeholder {
+    color: $shopping-text-grey;
+  }
+
+  .registration__login-input:hover,
+  .registration__login-input:focus {
+    outline: 2px solid $pink-color;
+  }
+
+  .registration__login-radio {
+    @include font (11px, 13px, normal, 300);
+    color: $black-bkg;
+    margin: 34px 0 34px 0;
+  }
+
+  .registration__login-male {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px;
+    transition: 0.4s;
+  }
+
+  .registration__login-male:before {
+    content: '';
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    border: 1px solid $shopping-input-grey;
+    box-sizing: border-box;
+    margin-right: 10px;
+    transition: 0.4s;
+  }
+
+  .registration__login-check {
+    display: none;
+  }
+
+  .registration__login-check:focus + .registration__login-male:before,
+  .registration__login-check:hover + .registration__login-male:before {
+    border: 2px solid $pink-color;
+    cursor: pointer;
+  }
+
+
+  .registration__login-check:focus + .registration__login-male,
+  .registration__login-check:hover + .registration__login-male {
+    color: $pink-color;
+    cursor: pointer;
+  }
+
+  .registration__login-check:checked + .registration__login-male {
+    color: $pink-color;
+  }
+
+  .registration__login-check:checked + .registration__login-male:before {
+    border-color: $pink-color;
+    background-image: url("../img/check-pink.svg");
+    background-size: 60% 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 8px $pink-color;
+  }
+
+  .registration__login-text {
+    @include font (13px, 16px, normal, 300);
+    color: $shopping-text-grey;
+    margin: 15px 0 39px 0;
+  }
+
+  .registration__login-btn {
+    @include font (14px, 17px);
+    padding: 16px 29px 17px 29px;
+    color: $white-color;
+    background: $pink-color;
+    border: none;
+    text-transform: uppercase;
+    transition: 0.4ms;
+  }
+
+  .registration__login-btn:hover,
+  .registration__login-btn:focus {
+    background: $btn-pink-hover;
+    cursor: pointer;
+  }
+
+  .registration__login-btn:active {
+    opacity: 0.7;
+  }
+
+  .registration__login-arrow {
+    padding-left: 20px;
+  }
+
+  .registration__perks {
+    width: 652px;
+
+    @include tablet {
+      width: 50%;
+      margin-left: 22px;
+    }
+
+    @include mobile {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 40px;
+    }
+  }
+
+  .registration__perks-title {
+    @include font (24px, 29px, normal, 300);
+    text-transform: uppercase;
+
+    @include tablet {
+      @include font (16px, 19px, normal, 300);
+    }
+  }
+
+  .registration__perks-text {
+    @include font (24px, 29px, normal, 300);
+    margin: 22px 0 21px 0;
+
+    @include tablet {
+      @include font (16px, 19px, normal, 300);
+    }
+  }
+
+  .registration__perks-item {
+    position: relative;
+    @include font (24px, 29px, normal, 300);
+    margin-bottom: 16px;
+    margin-left: 42px;
+
+    @include tablet {
+      @include font (16px, 19px, normal, 300);
+    }
+  }
+
+  .registration__perks-item:before {
+    content: "";
+    width: 20px;
+    height: 16px;
+    position: absolute;
+    left: -42px;
+    top: 7px;
+    background-image: url("../img/checkmark.svg");
+  }
+}
